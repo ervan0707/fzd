@@ -1,0 +1,32 @@
+[build-system]
+requires = ["maturin>=1.8.6"]
+build-backend = "maturin"
+
+[project]
+name = "fzd"
+description = "Interactive terminal directory explorer that cd's your shell"
+readme = "README.md"
+requires-python = ">=3.7"
+dynamic = ["version"]
+license = { text = "MIT" }
+authors = [{ name = "ervan0707", email = "ervanroot@gmail.com" }]
+keywords = ["cli", "tui", "directory", "navigation", "fuzzy"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Rust",
+    "Topic :: Utilities",
+]
+
+[project.urls]
+Homepage = "https://github.com/ervan0707/fzd"
+Repository = "https://github.com/ervan0707/fzd"
+Documentation = "https://github.com/ervan0707/fzd#readme"
+"Bug Reports" = "https://github.com/ervan0707/fzd/issues"
+
+[tool.maturin]
+bindings = "bin"
+strip = true

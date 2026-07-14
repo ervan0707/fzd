@@ -1,0 +1,37 @@
+name: CI
+
+# Builds the flake on every push/PR across all four systems and runs the test
+# suite. This is SEPARATE from the semantic-release `release.yml` — it never
+# publishes to crates.io/npm/PyPI, it only validates that the project builds
+# and (optionally) pushes the built store paths to a Cachix binary cache so Nix
+# users download instead of compiling.
+#
+# To enable the Cachix cache: create a cache on cachix.org, add a
+# CACHIX_AUTH_TOKEN repo secret, advertise the cache in flake.nix's nixConfig,
+# and uncomment the cachix-action step below.
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - { os: ubuntu-latest,    system: x86_64-linux }
+          - { os: ubuntu-24.04-arm, system: aarch64-linux }
+          - { os: macos-13,         system: x86_64-darwin }
+          - { os: macos-14,         system: aarch64-darwin }
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@v27
+      # - uses: cachix/cachix-action@v15
+      #   with:
+      #     name: YOURCACHE
+      #     authToken: ${{ secrets.CACHIX_AUTH_TOKEN }}
+      # `nix build` produces the cacheable flake derivation (cargo build does not).
+      - run: nix build
+      - run: nix develop -c cargo test

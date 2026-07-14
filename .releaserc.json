@@ -1,0 +1,53 @@
+{
+  "branches": [
+    "main"
+  ],
+  "plugins": [
+    "@semantic-release/commit-analyzer",
+    "@semantic-release/release-notes-generator",
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "perl -i -pe \"s/(\\\\\\\"fzd-[^\\\\\\\"]+\\\\\\\": *)?\\\\\\\"?\\\\*\\\\\\\"?/\\1\\\\\\\"${nextRelease.version}\\\\\\\"/g\" packages/npm/fzd/package.json"
+      }
+    ],
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "packages/npm/fzd"
+      }
+    ],
+    [
+      "@semantic-release/github",
+      {
+        "assets": [
+          { "path": "fzd-linux-x86_64.tar.gz", "label": "Linux x86_64 binary" },
+          { "path": "fzd-linux-arm64.tar.gz", "label": "Linux ARM64 binary" },
+          { "path": "fzd-darwin-x86_64.tar.gz", "label": "macOS x86_64 binary" },
+          { "path": "fzd-darwin-arm64.tar.gz", "label": "macOS ARM64 binary" },
+          { "path": "fzd-windows-x86_64.zip", "label": "Windows x86_64 binary" },
+          { "path": "fzd-windows-arm64.zip", "label": "Windows ARM64 binary" }
+        ]
+      }
+    ],
+    [
+      "@semantic-release/exec",
+      {
+        "prepareCmd": "sed -i.bak -E 's/^version = \"[^\"]+\"$/version = \"${nextRelease.version}\"/' Cargo.toml && cargo update -p fzd"
+      }
+    ],
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md",
+          "Cargo.toml",
+          "Cargo.lock",
+          "packages/npm/fzd/package.json"
+        ],
+        "message": "chore(release): ${nextRelease.version}\n\n${nextRelease.notes}"
+      }
+    ]
+  ]
+}

@@ -1,0 +1,53 @@
+[package]
+name = "fzd"
+version = "0.1.0"
+edition = "2021"
+description = "Interactive terminal directory explorer that cd's your shell"
+authors = ["ervan0707 <ervanroot@gmail.com>"]
+license = "MIT"
+repository = "https://github.com/ervan0707/fzd"
+documentation = "https://github.com/ervan0707/fzd#readme"
+homepage = "https://github.com/ervan0707/fzd"
+keywords = ["cli", "tui", "directory", "navigation", "fuzzy"]
+categories = ["command-line-utilities"]
+readme = "README.md"
+exclude = [
+    ".github/*",
+    ".gitignore",
+    "packages/*",
+    "flake.nix",
+    "flake.lock",
+    ".envrc",
+    ".direnv/*",
+    "examples/*",
+    "install.sh",
+    "pyproject.toml",
+    ".releaserc.json",
+]
+
+[[bin]]
+name = "fzd"
+path = "src/main.rs"
+
+[dependencies]
+ratatui = "0.29"
+crossterm = "0.28"
+fuzzy-matcher = "0.3"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+dirs = "5"
+clap = { version = "4", features = ["derive"] }
+anyhow = "1"
+ureq = "2"
+self-replace = "1"
+
+[target.'cfg(unix)'.dependencies]
+flate2 = "1"
+tar = "0.4"
+
+[target.'cfg(windows)'.dependencies]
+zip = { version = "2", default-features = false, features = ["deflate"] }
+
+[profile.release]
+lto = true
+strip = true

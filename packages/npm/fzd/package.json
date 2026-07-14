@@ -1,0 +1,24 @@
+{
+  "name": "fzd",
+  "version": "0.1.0",
+  "description": "Interactive terminal directory explorer that cd's your shell",
+  "bin": "lib/index.js",
+  "private": false,
+  "keywords": ["cli", "tui", "directory", "navigation", "fuzzy"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ervan0707/fzd.git"
+  },
+  "author": "ervan0707 <ervanroot@gmail.com>",
+  "license": "MIT",
+  "bugs": { "url": "https://github.com/ervan0707/fzd/issues" },
+  "homepage": "https://github.com/ervan0707/fzd#readme",
+  "optionalDependencies": {
+    "fzd-linux-x64": "0.1.0",
+    "fzd-linux-arm64": "0.1.0",
+    "fzd-darwin-x64": "0.1.0",
+    "fzd-darwin-arm64": "0.1.0",
+    "fzd-windows-x64": "0.1.0",
+    "fzd-windows-arm64": "0.1.0"
+  }
+}
