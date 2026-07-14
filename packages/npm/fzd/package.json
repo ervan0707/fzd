@@ -1,25 +1,33 @@
 {
   "name": "@ervan0707/fzd",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Interactive terminal directory explorer that cd's your shell",
   "bin": { "fzd": "lib/index.js" },
   "private": false,
   "publishConfig": { "access": "public" },
-  "keywords": ["cli", "tui", "directory", "navigation", "fuzzy"],
+  "keywords": [
+    "cli",
+    "tui",
+    "directory",
+    "navigation",
+    "fuzzy"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ervan0707/fzd.git"
   },
   "author": "ervan0707 <ervanroot@gmail.com>",
   "license": "MIT",
-  "bugs": { "url": "https://github.com/ervan0707/fzd/issues" },
+  "bugs": {
+    "url": "https://github.com/ervan0707/fzd/issues"
+  },
   "homepage": "https://github.com/ervan0707/fzd#readme",
   "optionalDependencies": {
-    "fzd-linux-x64": "0.1.0",
-    "fzd-linux-arm64": "0.1.0",
-    "fzd-darwin-x64": "0.1.0",
-    "fzd-darwin-arm64": "0.1.0",
-    "fzd-windows-x64": "0.1.0",
-    "fzd-windows-arm64": "0.1.0"
+    "fzd-linux-x64": "1.0.0",
+    "fzd-linux-arm64": "1.0.0",
+    "fzd-darwin-x64": "1.0.0",
+    "fzd-darwin-arm64": "1.0.0",
+    "fzd-windows-x64": "1.0.0",
+    "fzd-windows-arm64": "1.0.0"
   }
 }

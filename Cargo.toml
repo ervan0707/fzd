@@ -1,6 +1,6 @@
 [package]
 name = "fzd"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 description = "Interactive terminal directory explorer that cd's your shell"
 authors = ["ervan0707 <ervanroot@gmail.com>"]
