@@ -1,9 +1,10 @@
 {
-  "name": "fzd",
+  "name": "@ervan0707/fzd",
   "version": "0.1.0",
   "description": "Interactive terminal directory explorer that cd's your shell",
-  "bin": "lib/index.js",
+  "bin": { "fzd": "lib/index.js" },
   "private": false,
+  "publishConfig": { "access": "public" },
   "keywords": ["cli", "tui", "directory", "navigation", "fuzzy"],
   "repository": {
     "type": "git",

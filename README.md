@@ -1,7 +1,7 @@
 # fzd
 
 [![Crates.io](https://img.shields.io/crates/v/fzd?logo=rust&logoColor=white)](https://crates.io/crates/fzd)
-[![npm](https://img.shields.io/npm/v/fzd?logo=npm)](https://www.npmjs.com/package/fzd)
+[![npm](https://img.shields.io/npm/v/@ervan0707/fzd?logo=npm)](https://www.npmjs.com/package/@ervan0707/fzd)
 [![PyPI](https://img.shields.io/pypi/v/fzd?logo=pypi&logoColor=white)](https://pypi.org/project/fzd/)
 [![CI](https://img.shields.io/github/actions/workflow/status/ervan0707/fzd/ci.yml?branch=main&label=CI&logo=github)](https://github.com/ervan0707/fzd/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](#license)
@@ -21,7 +21,7 @@ binary.
 | Channel | Command |
 |---------|---------|
 | Cargo | `cargo install fzd` |
-| npm | `npm install -g fzd` |
+| npm | `npm install -g @ervan0707/fzd` |
 | PyPI | `pip install fzd` |
 | Script | `curl -fsSL https://raw.githubusercontent.com/ervan0707/fzd/main/install.sh \| bash` |
 | Nix | `nix profile install github:ervan0707/fzd` |
@@ -73,7 +73,7 @@ release and prints whether you're current, without opening the TUI.
 and swaps it in over the running executable. This is meant for the raw-binary
 install (the `curl | bash` script or a manual download). If fzd was installed
 through a package manager, `--update` stops and points you at the right command
-(`cargo install fzd --force`, `npm update -g fzd`, `brew upgrade fzd`, and so
+(`cargo install fzd --force`, `npm update -g @ervan0707/fzd`, `brew upgrade fzd`, and so
 on). Pass `--force` to self-replace anyway.
 
 ## Development

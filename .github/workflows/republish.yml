@@ -238,13 +238,14 @@ jobs:
       - name: Publish npm meta-package (idempotent)
         shell: bash
         run: |
-          # The wrapper "fzd" package (the one users install) is published
-          # separately by semantic-release in the normal flow; cover it here too.
+          # The wrapper "@ervan0707/fzd" package (the one users install) is
+          # published separately by semantic-release in the normal flow; cover
+          # it here too.
           tag="${{ inputs.tag }}"; ver="${tag#v}"
           cp README.md packages/npm/fzd/ || true
           cd packages/npm/fzd
-          if npm view "fzd@${ver}" version >/dev/null 2>&1; then
-            echo "fzd@${ver} already on npm, skipping"
+          if npm view "@ervan0707/fzd@${ver}" version >/dev/null 2>&1; then
+            echo "@ervan0707/fzd@${ver} already on npm, skipping"
           else
             npm publish --access public
           fi
