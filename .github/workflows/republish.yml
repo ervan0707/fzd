@@ -69,7 +69,7 @@ jobs:
       matrix:
         build:
           - { NAME: linux-x64-glibc,  OS: ubuntu-latest, TARGET: x86_64-unknown-linux-gnu,  BINARY_NAME: fzd,     ASSET_NAME: fzd-linux-x86_64,   ARCHIVE_EXT: tar.gz, MATURIN_TARGET: x86_64 }
-          - { NAME: linux-arm64-glibc, OS: ubuntu-latest, TARGET: aarch64-unknown-linux-gnu, BINARY_NAME: fzd,     ASSET_NAME: fzd-linux-arm64,    ARCHIVE_EXT: tar.gz, MATURIN_TARGET: aarch64 }
+          - { NAME: linux-arm64-glibc, OS: ubuntu-24.04-arm, TARGET: aarch64-unknown-linux-gnu, BINARY_NAME: fzd,     ASSET_NAME: fzd-linux-arm64,    ARCHIVE_EXT: tar.gz, MATURIN_TARGET: aarch64 }
           - { NAME: win32-x64-msvc,   OS: windows-2022,  TARGET: x86_64-pc-windows-msvc,    BINARY_NAME: fzd.exe, ASSET_NAME: fzd-windows-x86_64, ARCHIVE_EXT: zip,    MATURIN_TARGET: x64 }
           - { NAME: win32-arm64-msvc, OS: windows-2022,  TARGET: aarch64-pc-windows-msvc,   BINARY_NAME: fzd.exe, ASSET_NAME: fzd-windows-arm64,  ARCHIVE_EXT: zip,    MATURIN_TARGET: aarch64-pc-windows-msvc }
           - { NAME: darwin-x64,       OS: macos-14,      TARGET: x86_64-apple-darwin,       BINARY_NAME: fzd,     ASSET_NAME: fzd-darwin-x86_64,  ARCHIVE_EXT: tar.gz, MATURIN_TARGET: x86_64 }
